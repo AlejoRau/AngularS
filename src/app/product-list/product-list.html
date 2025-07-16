@@ -1,0 +1,34 @@
+<h1 class="title">Camisetas Disponibles</h1>
+<div class="container-fluid" style="overflow-x: auto;">
+<table class="table table-responsive"><thead>
+    <tr>
+        <th>Imagen</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Precio</th>
+        <th>Stock</th>
+        <th>Compra</th>
+    </tr>
+    
+</thead>
+
+<tbody>
+    
+    <tr *ngFor="let product of products" [ngClass]="{'oferta':product.oferta}">
+        <td><img width="200" class="img-thumbnail" [src]="product.image" alt="{{ products[0].nombre }}"></td>
+        <td>{{product.nombre}}</td>
+        <td>{{product.tipo}}</td>
+        <td>{{product.precio}}$</td>
+        <td>
+  <span class="badge rounded-pill text-bg-secondary" *ngIf="product.stock == 0; ">
+    Sin Stock
+  </span></td>
+  <td>
+ 
+ <app-input-integer [(cantidad)]="product.cantidad" [max]="product.stock" (limiteAlcanzado)="maxReached($event)"></app-input-integer>
+  <button class="btn" (click)="AddToCart(product)">Comprar</button>
+</td>
+</tbody>
+</table>
+
+</div>

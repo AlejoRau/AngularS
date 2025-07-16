@@ -3,14 +3,30 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { CommonModule } from '@angular/common';
+import { ProductList } from './product-list/product-list';
+import { FormsModule } from '@angular/forms';
+import { GrshopContacto } from './grshop-contacto/grshop-contacto';
+import { GrshopProductos } from './grshop-productos/grshop-productos';
+import { GrshopCarrito } from './grshop-carrito/grshop-carrito';
+import { InputInteger } from './input-integer/input-integer';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
-    App
+    App,
+    ProductList,
+    GrshopContacto,
+    GrshopProductos,
+    GrshopCarrito,
+    InputInteger,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
