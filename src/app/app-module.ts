@@ -11,13 +11,13 @@ import { GrshopProductos } from './grshop-productos/grshop-productos';
 import { GrshopCarrito } from './grshop-carrito/grshop-carrito';
 import { InputInteger } from './input-integer/input-integer';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     App,
     ProductList,
-    GrshopContacto,
     GrshopProductos,
     GrshopCarrito,
     InputInteger,

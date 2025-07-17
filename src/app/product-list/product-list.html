@@ -1,3 +1,4 @@
+
 <h1 class="title">Camisetas Disponibles</h1>
 <div class="container-fluid" style="overflow-x: auto;">
 <table class="table table-responsive"><thead>
@@ -21,10 +22,11 @@
         <td>{{product.precio}}$</td>
         <td>
   <span class="badge rounded-pill text-bg-secondary" *ngIf="product.stock == 0; ">
-    Sin Stock
-  </span></td>
+    Sin Stock</span> 
+  <span class="badge rounded-pill text-bg-danger" *ngIf="product.stock!=0 && product.oferta==true">Ultimas en Stock!</span>
+  <span class="badge rounded-pill text-bg-primary" *ngIf="product.stock!=0 && product.oferta==false">Stock Disponible</span>
+</td>
   <td>
- 
  <app-input-integer [(cantidad)]="product.cantidad" [max]="product.stock" (limiteAlcanzado)="maxReached($event)"></app-input-integer>
   <button class="btn" (click)="AddToCart(product)">Comprar</button>
 </td>

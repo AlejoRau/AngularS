@@ -1,14 +1,15 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Product } from './Product';
-import { NgIfContext } from '@angular/common';
-import { ProductCart } from '../product-cart';
-import { ProductData } from '../product-data';
+
+import { ProductCart } from '../Product/product-cart';
+import { ProductData } from '../Product/product-data';
+
 
 @Component({
   selector: 'app-product-list',
   standalone: false,
   templateUrl: './product-list.html',
-  styleUrl: './product-list.scss'
+   styleUrls: ['./product-list.scss']  
 })
 export class ProductList implements OnInit {
 
@@ -35,7 +36,7 @@ export class ProductList implements OnInit {
   }
 
   AddToCart(product: Product): void {
-    if (product.cantidad > 0) {
+    if (product.cantidad > 0 && product.cantidad<=product.stock) {
       this.cart.AddToCart(product);
       product.stock -= product.cantidad;
       product.cantidad = 0; 

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { ProductCart } from '../product-cart';
+
 import { Product } from '../product-list/Product';
 import { Observable } from 'rxjs';
+import { ProductCart } from '../Product/product-cart';
 
 @Component({
   selector: 'app-grshop-carrito',
