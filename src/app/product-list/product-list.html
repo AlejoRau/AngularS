@@ -28,7 +28,11 @@
 </td>
   <td>
  <app-input-integer [(cantidad)]="product.cantidad" [max]="product.stock" (limiteAlcanzado)="maxReached($event)"></app-input-integer>
-  <button class="btn" (click)="AddToCart(product)">Comprar</button>
+ <button 
+  class="btn btn-comprar"
+  (click)="AddToCart(product)">
+  🛒 Comprar
+</button>
 </td>
 </tbody>
 </table>

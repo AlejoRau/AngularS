@@ -1,10 +1,10 @@
  <div class="input-group input-group-sm justify-content-center">
 <button class="btn btn-outline-secondary" (click)="menosCantidad()">−</button>
-    <input type="number"
-           [(ngModel)]="cantidad"
-           (keydown)="onChangeQuantity($event)"
-           class="form-control text-center quantity-input"
-           min="0"
-           style="max-width: 60px;" />
+   <input type="number"
+       [(ngModel)]="cantidad"
+       (ngModelChange)="onCantidadChange($event)"
+       class="form-control text-center quantity-input"
+       min="0"
+       style="max-width: 60px;" />
     <button class="btn btn-outline-secondary" (click)="masCantidad()">+</button>
     </div>

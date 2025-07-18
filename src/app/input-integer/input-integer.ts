@@ -38,4 +38,16 @@ export class InputInteger {
     }
     this.cantidadChange.emit(this.cantidad);
   }
+  onCantidadChange(value: number): void {
+  if (value > this.max) {
+    this.cantidad = this.max;
+    this.limiteAlcanzado.emit(this.max);
+  } else if (value < 0) {
+    this.cantidad = 0;
+  } else {
+    this.cantidad = value;
+  }
+
+  this.cantidadChange.emit(this.cantidad);
+}
 }
